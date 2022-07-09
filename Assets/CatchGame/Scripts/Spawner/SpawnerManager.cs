@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CatchGame
 {
-    public class CoinSpawnerManager : MonoBehaviour
+    public class SpawnerManager : MonoBehaviour
     {
         private IPrefabSpawner _prefabSpawner;
 

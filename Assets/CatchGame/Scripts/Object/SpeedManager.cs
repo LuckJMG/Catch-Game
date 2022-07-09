@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CatchGame
 {
-    public class CoinManager : MonoBehaviour
+    public class SpeedManager : MonoBehaviour
     {
         [SerializeField] private Vector2 minMaxSpeed = new(.5f, 2f);
         private IMovementController _movementController;

@@ -5,7 +5,8 @@ namespace CatchGame
 {
     public class PlayerManager : MonoBehaviour
     {
-        private static Action OnCoinTrigger;
+        public static Action OnCoinTrigger;
+        public static Action OnGameOver;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -13,6 +14,11 @@ namespace CatchGame
             {
                 Destroy(other.gameObject);
                 OnCoinTrigger?.Invoke();
+            }
+            if (other.gameObject.CompareTag("Spike"))
+            {
+                OnGameOver?.Invoke();
+                Destroy(gameObject);
             }
         }
 
