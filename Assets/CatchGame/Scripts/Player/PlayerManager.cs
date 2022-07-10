@@ -17,8 +17,8 @@ namespace CatchGame
             }
             if (other.gameObject.CompareTag("Spike"))
             {
+                gameObject.SetActive(false);
                 OnGameOver?.Invoke();
-                Destroy(gameObject);
             }
         }
 

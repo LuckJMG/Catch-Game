@@ -6,22 +6,30 @@ namespace CatchGame
     public class CoinCountManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI coinTextMesh;
-        private int _coinCount;
+        public static int CoinCount;
 
         private void Start()
         {
+            CoinCount = 0;
             PlayerManager.OnCoinTrigger += OnCountUpdate;
+            PlayerManager.OnGameOver += OnGameOver;
         }
 
         private void OnDestroy()
         {
             PlayerManager.OnCoinTrigger -= OnCountUpdate;
+            PlayerManager.OnGameOver -= OnGameOver;
+        }
+
+        private void OnGameOver()
+        {
+            coinTextMesh.gameObject.SetActive(false);
         }
 
         private void OnCountUpdate()
         {
-            _coinCount += 1;
-            if (coinTextMesh != null) coinTextMesh.text = "Coins: " + _coinCount.ToString();
+            CoinCount += 1;
+            if (coinTextMesh != null) coinTextMesh.text = "Coins: " + CoinCount.ToString();
         }
     }
 }
