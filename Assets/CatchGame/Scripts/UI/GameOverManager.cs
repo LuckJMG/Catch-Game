@@ -11,7 +11,7 @@ namespace CatchGame
 
         private void Start()
         {
-            PlayerManager.OnGameOver += OnGameOver;
+            CollisionManager.OnGameOver += OnGameOver;
         }
 
         private void OnGameOver()

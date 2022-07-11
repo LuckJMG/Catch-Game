@@ -3,7 +3,7 @@ using System;
 
 namespace CatchGame
 {
-    public class PlayerManager : MonoBehaviour
+    public class CollisionManager : MonoBehaviour
     {
         public static Action OnCoinTrigger;
         public static Action OnGameOver;

@@ -9,7 +9,7 @@ namespace CatchGame
 
         private void Start()
         {
-            PlayerManager.OnGameOver += () => _gameOver = true;
+            CollisionManager.OnGameOver += () => _gameOver = true;
         }
 
         private void Update()
@@ -18,11 +18,6 @@ namespace CatchGame
             {
                 SceneManager.LoadScene("SampleScene");
             }
-        }
-
-        private void OnDestroy()
-        {
-            PlayerManager.OnGameOver -= () => _gameOver = true;
         }
     }
 }

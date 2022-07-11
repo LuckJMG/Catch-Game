@@ -11,14 +11,8 @@ namespace CatchGame
         private void Start()
         {
             CoinCount = 0;
-            PlayerManager.OnCoinTrigger += OnCountUpdate;
-            PlayerManager.OnGameOver += OnGameOver;
-        }
-
-        private void OnDestroy()
-        {
-            PlayerManager.OnCoinTrigger -= OnCountUpdate;
-            PlayerManager.OnGameOver -= OnGameOver;
+            CollisionManager.OnCoinTrigger += OnCountUpdate;
+            CollisionManager.OnGameOver += OnGameOver;
         }
 
         private void OnGameOver()
