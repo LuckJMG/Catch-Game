@@ -25,6 +25,7 @@ namespace CatchGame
         private void OnDestroy()
         {
             OnCoinTrigger = null;
+            OnGameOver = null;
         }
     }
 }
